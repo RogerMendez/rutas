@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+Mis Lineas
+{% endblock %}
+{% block menuopciones %}
+{% include 'lineas/_menu.html' %}
+{% endblock %}
+{% block cuerpo %}
+<div class="row">
+    <h2 class="text-center">Mis Lineas</h2>
+    <div class="col-md-12">
+        <table class="table table-responsive table-bordered table-hover">
+            <thead>
+            <tr>
+                <th width="30px">#</th>
+                <th class="text-center">Linea</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for linea in lineas %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ linea.nombre }}</td>
+                        <td></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
